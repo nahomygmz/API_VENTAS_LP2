@@ -1,0 +1,57 @@
+﻿@model ClienteAPI.Models.Venta
+
+@{
+    ViewBag.Title = "Eliminar Registro";
+}
+
+<h2>Eliminar registro de venta</h2>
+
+<h3>Esta seguro de eliminar este registro de venta?</h3>
+<div>
+    <h4>Datos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ID Venta
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdVenta)
+        </dd>
+
+        <dt>
+            ID Factura
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdFactura)
+        </dd>
+
+        <dt>
+            ID Producto
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdProducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <br />
+            <input type="submit" value="Eliminar" /> |
+            @Html.ActionLink("Atras", "Index")
+        </div>
+    }
+</div>

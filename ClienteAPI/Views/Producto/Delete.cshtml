@@ -1,0 +1,64 @@
+﻿@model ClienteAPI.Models.Producto
+
+@{
+    ViewBag.Title = "liminar Produco";
+}
+
+<h2>Eliminar Produco</h2>
+
+<h3>Esta seguro de eliminar este producto?</h3>
+<div>
+    <h4>Producto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ID Producto
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdProducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+
+        <dt>
+            ID Categoria
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdCategoria)
+        </dd>
+
+        <dt>
+            ID Proveedor
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdProveedor)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" /> |
+            @Html.ActionLink("Volver", "Index")
+        </div>
+    }
+</div>

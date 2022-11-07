@@ -1,0 +1,49 @@
+﻿@model ClienteAPI.Models.Factura
+
+@{
+    ViewBag.Title = "Eliminar Factura";
+}
+
+<h2>Eliminar Factura</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Datos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ID Factura
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdFactura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            ID Cliente
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdCliente)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <br />
+            <input type="submit" value="Eliminar" /> |
+            @Html.ActionLink("Atras", "Index")
+        </div>
+    }
+</div>

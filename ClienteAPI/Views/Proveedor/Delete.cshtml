@@ -1,0 +1,57 @@
+﻿@model ClienteAPI.Models.Proveedor
+
+@{
+    ViewBag.Title = "Eliminar Proveedor";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Esta seguro que desea eliminar este proveedor?</h3>
+<div>
+    <h4>Datos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdProveedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdProveedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <br />
+            <input type="submit" value="Eliminar"/> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
